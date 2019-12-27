@@ -1,6 +1,6 @@
 .calendar {
-    width: 200px;
-    height: 340px;
+    width: 100px;
+    height: 170px;
     margin:0 auto;
 }
 .calendar-modal {
@@ -122,13 +122,13 @@
 }
 .calendar .week li,
 .calendar .days li {
-    width: 40px;
-    height: 40px;
+    width: 20px;
+    height: 20px;
     line-height: 40px;
 }
 .calendar .month-items li {
-    width: 70px;
-    height: 70px;
+    width: 35px;
+    height: 35px;
     line-height: 70px;
 }
 .calendar .days li[data-calendar-day]:hover,
