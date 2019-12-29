@@ -5,24 +5,97 @@
     <title>Title</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href="../css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
 </head>
 <body>
 <div class="container">
-    <h2>堆叠表单</h2>
+    <h2>密码设置</h2>
     <form>
         <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter email">
-        </div>
-        <div class="form-group">
-            <label for="pwd">Password:</label>
-            <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+            <label for="email">旧密码</label>
+            <input type="text" class="form-control" id="email" placeholder="旧密码">
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="form-group">
+            <label for="email">新密码</label>
+            <input type="number" max="120" class="form-control" id="email" placeholder="新密码" >
+        </div>
+        <div class="form-group">
+            <label for="email">确认密码</label>
+            <input type="number" max="500" class="form-control" id="email" placeholder="确认密码">
+        </div>
+        <div class="form-group">
+            <label for="email">种族</label>
+            <input type="text" class="form-control" id="email" placeholder="空白页法师">
+        </div>
+        <div class="form-group">
+            <label for="email">常用专精</label>
+            <select class="form-control" id="sel1">
+                <option>火焰</option>
+                <option>冰霜</option>
+                <option>奥术</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <div class="input-group date form_datetime col-md-5" data-date="1979-09-16T05:25:07Z" data-link-field="dtp_input1">
+                <input class="form-control" size="16" type="text" value="" readonly>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+            </div>
+            <input type="hidden" id="dtp_input1" value="" /><br/>
+        </div>
+        <div class="form-group">
+            <div class="input-group date form_datetime col-md-5" data-date="1979-09-16T05:25:07Z" data-link-field="dtp_input1">
+                <input class="form-control" size="16" type="text" value="" readonly>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+            </div>
+            <input type="hidden" id="dtp_input1" value="" /><br/>
+        </div>
+        <button id="settingEnable" type="submit" class="btn btn-primary col-md-12">确认修改</button>
     </form>
 </div>
 
+<script rel="script" type="text/javascript" src="../js/extra/Jquery-3.4.1.min.js"></script>
+<script rel="script" type="text/javascript" src="../js/index.js"></script>
+<script type="text/javascript" src="../js/extra/bootstrap-datetimepicker.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="../js/extra/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
 
+<script type="text/javascript">
+    $('.form_datetime').datetimepicker({
+        language:  'zh-CN',
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        forceParse: 0,
+        showMeridian: 1,
+        format: 'yyyy-mm-dd hh:ii:ss',
+        dateFormat: 'yyyy-mm-dd',//日期显示格式
+        timeFormat: 'HH:mm:ss',//时间显示格式
+    });
+    $('.form_date').datetimepicker({
+        language:  'zh-CN',
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 2,
+        forceParse: 0
+    });
+    $('.form_time').datetimepicker({
+        language:  'zh-CN',
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 1,
+        minView: 0,
+        maxView: 1,
+        forceParse: 0
+    });
+</script>
 </body>
 </html>

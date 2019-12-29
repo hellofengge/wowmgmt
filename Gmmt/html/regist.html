@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/startPage.css" rel="stylesheet">
+</head>
+<body>
+<div class="body">
+     <div class="container col-md-12" style="background: #ffffff;padding-bottom: 20px">
+            <h2 class="text-center">注册</h2>
+          <form class="col-md-12">
+                <div class="form-group">
+                        <label for="email">所属公会</label>
+                        <input type="text" class="form-control" id="guildName" placeholder="花饰">
+                    </div>
+                <div class="form-group">
+                        <label for="email">角色名</label>
+                        <input type="text" maxlength="8" class="form-control" id="roleName" placeholder="确保与游戏角色名相同">
+                    </div>
+                <div class="form-group">
+                        <label for="email">密码</label>
+                        <input type="password"  maxlength="16" class="form-control" id="pwd-1" placeholder="输入密码">
+                    </div>
+               <div class="form-group">
+                        <label for="email">确认密码</label>
+                        <input type="password" maxlength="16" class="form-control" id="pwd-2" placeholder="确认密码">
+                    </div>
+
+           </form>
+          <div class="button col-md-12">
+                <button class="btn btn-info col-md-12 " id="registerConfirm">提交管理员审核</button>
+            </div>
+
+    </div>
+</div>
+<script rel="script" type="text/javascript" src="../js/extra/Jquery-3.4.1.min.js"></script>
+<script rel="script" type="text/javascript" src="../js/startPage.js"></script>
+</body>
+</html>

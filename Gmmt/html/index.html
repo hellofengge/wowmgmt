@@ -8,274 +8,327 @@ date: 2019-08-19
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>花饰</title>
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/share.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../css/calendar.css">
+    <link href="../css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
 </head>
 <body>
-<div class="mb-md-10 Title" align="center">
-    Title
-    <p class="motto">
-        ————文字文字文字
-    </p>
-</div>
-<div class="col-md-3 ownerInfo">
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <div class="col-md-12" >
-                <p class="text-left col-md-6">
-                    <span class="glyphicon glyphicon-user"></span> 个人信息
-                </p>
-                <p class="text-right col-md-6">
-                    <span class=" glyphicon glyphicon-cog"></span>
-                    <a href="#">设置</a>
-                </p>
-
-            </div>
-            <a class="col-md-12" style="line-height: 10px;height: 1px;background-color: #eeeeaa;width: 100%; display: block;margin-bottom: 10px"></a>
-            <div class="col-md-12 roleInfo">
-                <div class="roleName col-md-12">
-
-                    <div class="roleImg col-md-6" style="background: url('../res/img/mt694084.carter_figure1_hires(zh-cn,msdn.10).png');background-repeat: no-repeat;background-size: cover;" >
-
-                    </div>
-
-                    <div class="roleName col-md-6">
-                        <p class="text-center" style="line-height: 90px">
-                            <b>
-                                dawdwadaw
-                            </b>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-1"></div>
-                <div class="roleAttribute col-md-12">
-                  <table class="table">
-                      <tr>
-                          <td>
-                              <span class="label label-warning">姓名</span>
-                          </td>
-                          <td>
-                                张三
-                          </td>
-                          <td>
-                              <span class="label label-warning">姓名</span>
-                          </td>
-                          <td>
-
-                          </td>
-                      </tr>
-                      <tr>
-                          <td>
-                              <span class="label label-warning">姓名</span>
-                          </td>
-                          <td>
-
-                          </td>
-                          <td>
-                              <span class="label label-warning">姓名</span>
-                          </td>
-                          <td>
-
-                          </td>
-                      </tr>
-                      <tr>
-                          <td>
-                              <span class="label label-warning">姓名</span>
-                          </td>
-                          <td>
-
-                          </td>
-                          <td>
-                              <span class="label label-warning">姓名</span>
-                          </td>
-                          <td>
-
-                          </td>
-                      </tr>
-                  </table>
-                </div>
-                <div class="col-md-1"></div>
-            </div>
-        </div>
-
+<div id="body" class="col-md-12" style="z-index: 1">
+    <div class="mb-md-10 Title" align="center">
+        《花饰》
+        <p class="motto">
+            ————一区 罗宁 联盟
+        </p>
     </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <div class="panel-title" align="center">
-                <a>日程安排</a>
-            </div>
-        </div>
-        <div class="panel-body dateInfo ">
-            <div id="ca"></div>
-            <div class="panel panel-warning scheduleDetails col-md-12">
-                <div class="panel-body">
-                    <p>
-                        日程详情
+    <div class="col-md-3 ownerInfo">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="col-md-12" >
+                    <p class="text-left col-md-4">
+                        <span class="glyphicon glyphicon-user"></span> 个人信息
                     </p>
-                    <a class="col-md-12" style="line-height: 10px;height: 1px;background-color: #eeeeaa;width: 100%; display: block;margin-bottom: 10px"></a>
-                    <div  align="center">
-                        <p>暂无</p>
-                    </div>
-                    <div class="col-md-12 scheduleDetailsText">
-                        <div class="track-list">
-                            <ul>
-                                <li class="first">
-                                    <i class="node-icon"></i>
-                                    <span class="time">2016-03-10 18:07:15</span>
-                                    <span class="txt">感谢您在京东购物，欢迎您再次光临！</span>
-                                </li>
-                                <li>
-                                    <i class="node-icon"></i>
-                                    <span class="time">2016-03-10 18:07:15</span>
-                                    <span class="txt">【京东到家】京东配送员【申国龙】已出发，联系电话【18410106883，感谢您的耐心等待，参加评价还能赢取京豆呦】</span>
-                                </li>
-                            </ul>
+                    <p class="text-right col-md-4">
+                        <span class=" glyphicon glyphicon-cog"></span>
+                        <a id="roleInfoSetting" href="#">基本设置</a>
+                    </p>
+                    <p class="text-right col-md-4">
+                        <span class=" glyphicon glyphicon-cog"></span>
+                        <a id="passwordSetting" href="#">密码设置</a>
+                    </p>
+
+                </div>
+                <a class="col-md-12" style="line-height: 10px;height: 1px;background-color: #eeeeaa;width: 100%; display: block;margin-bottom: 10px"></a>
+                <div class="col-md-12 roleInfo">
+                    <div class="roleName col-md-12">
+
+                        <div class="roleImg col-md-6" style="background: url('http://pic1.178.com/avatars/02/44/dd/nga_38067535.jpg');background-repeat: no-repeat;background-size: cover;" >
+
+                        </div>
+
+                        <div class="roleName col-md-6">
+                            <p class="text-center" style="line-height: 90px">
+                                <b>
+                                    空白页法师
+                                </b>
+                            </p>
                         </div>
                     </div>
+                    <div class="col-md-1"></div>
+                    <div class="roleAttribute col-md-12">
+                        <table class="table">
+                            <tr>
+                                <td>
+                                    <span class="label label-warning">职业</span>
+                                </td>
+                                <td>
+                                    法师
+                                </td>
+                                <td>
+                                    <span class="label label-warning">等级</span>
+                                </td>
+                                <td>
+                                    120
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="label label-warning">装备等级</span>
+                                </td>
+                                <td>
+                                    430
+                                </td>
+                                <td>
+                                    <span class="label label-warning">种族</span>
+                                </td>
+                                <td>
+                                    人类
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="label label-warning">常用专精</span>
+                                </td>
+                                <td>
+                                    冰霜
+                                </td>
+                                <td>
+                                    <span class="label label-warning">职责</span>
+                                </td>
+                                <td>
+                                    输出
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-md-1"></div>
                 </div>
-
             </div>
-        </div>
 
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-title" align="center">
+                    <a>我的日程</a>
+                </div>
+            </div>
+            <div class="panel-body dateInfo ">
+                <div id="ca"></div>
+                <div class="panel panel-warning scheduleDetails col-md-12">
+                    <div class="panel-body">
+                        <p>
+                            日程详情
+                        </p>
+                        <a class="col-md-12" style="line-height: 10px;height: 1px;background-color: #eeeeaa;width: 100%; display: block;margin-bottom: 10px"></a>
+                        <div  align="center">
+                            <p>暂无</p>
+                        </div>
+                        <div class="col-md-12 scheduleDetailsText">
+                            <div class="track-list">
+                                <ul>
+                                    <li class="first">
+                                        <i class="node-icon"></i>
+                                        <span class="time">2016-03-10 18:07:15</span>
+                                        <span class="txt">感谢您在京东购物，欢迎您再次光临！</span>
+                                    </li>
+                                    <li>
+                                        <i class="node-icon"></i>
+                                        <span class="time">2016-03-10 18:07:15</span>
+                                        <span class="txt">【京东到家】京东配送员【申国龙】已出发，联系电话【18410106883，感谢您的耐心等待，参加评价还能赢取京豆呦】</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
     </div>
-</div>
-<div class="col-md-6 ownerInfo guildActivity">
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <span class="col-md-10">今日新闻</span>
-            <div class="col-md-11 contentBox">
-                <div class="page-header">
-                    <h3>
-                        <label class="label label-danger">火</label>
+    <div class="col-md-6 ownerInfo guildActivity">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <span class="col-md-10">活动新闻</span>
+                <div class="col-md-11 contentBox">
+                    <div class="page-header">
+                        <h3>
+                            <label class="label label-danger">火</label>
                             标题一标题一标题一标题一标
-                        <small class="activityTime">发表日期：2019-12-19 19:00</small>
-                    </h3>
+                            <small class="activityTime">发表日期：2019-12-19 19:00</small>
+                        </h3>
+                    </div>
+                    <p class="activityContent">
+                        内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容
+                        容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容
+                        容内容内容内容内容内容容内容内容
+                    </p>
+                    <button class="btn btn-success activityBtn " value="123" >了解详情</button>
                 </div>
-                <p class="activityContent">
-                    内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容
-                    容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容
-                    容内容内容内容内容内容容内容内容
-                </p>
-                <button class="btn btn-success activityBtn " >了解详情</button>
-            </div>
-            <div class="col-md-11 contentBox">
-                <div class="page-header">
-                    <h3>
-                        标题一标题一标题一标题一标
-                        <small class="activityTime">发表日期：2019-12-19 19:00</small>
-                    </h3>
+                <div class="col-md-11 contentBox">
+                    <div class="page-header">
+                        <h3>
+                            标题一标题一标题一标题一标
+                            <small class="activityTime">发表日期：2019-12-19 19:00</small>
+                        </h3>
+                    </div>
+                    <p class="activityContent">
+                        内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容
+                        容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容
+                        容内容内容内容内容内容容内容内容
+                    </p>
+                    <button class="btn btn-success activityBtn " >了解详情</button>
                 </div>
-                <p class="activityContent">
-                    内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容
-                    容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容
-                    容内容内容内容内容内容容内容内容
-                </p>
-                <button class="btn btn-success activityBtn " >了解详情</button>
-            </div>
-            <div class="col-md-11 contentBox">
-                <div class="page-header">
-                    <h3>
-                        标题一标题一标题一标题一标
-                        <small class="activityTime">发表日期：2019-12-19 19:00</small>
-                    </h3>
+                <div class="col-md-11 contentBox">
+                    <div class="page-header">
+                        <h3>
+                            标题一标题一标题一标题一标
+                            <small class="activityTime">发表日期：2019-12-19 19:00</small>
+                        </h3>
+                    </div>
+                    <p class="activityContent">
+                        内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容
+                        容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容
+                        容内容内容内容内容内容容内容内容
+                    </p>
+                    <button class="btn btn-success activityBtn " >了解详情</button>
                 </div>
-                <p class="activityContent">
-                    内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容
-                    容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容
-                    容内容内容内容内容内容容内容内容
-                </p>
-                <button class="btn btn-success activityBtn " >了解详情</button>
-            </div>
-            <div class="col-md-11 contentBox">
-                <div class="page-header">
-                    <h3>
-                        标题一标题一标题一标题一标
-                        <small class="activityTime">发表日期：2019-12-19 19:00</small>
-                    </h3>
+                <div class="col-md-11 contentBox">
+                    <div class="page-header">
+                        <h3>
+                            标题一标题一标题一标题一标
+                            <small class="activityTime">发表日期：2019-12-19 19:00</small>
+                        </h3>
+                    </div>
+                    <p class="activityContent">
+                        内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容
+                        容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容
+                        容内容内容内容内容内容容内容内容
+                    </p>
+                    <button class="btn btn-success activityBtn " >了解详情</button>
                 </div>
-                <p class="activityContent">
-                    内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容
-                    容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容容内容内容内容内容内容
-                    容内容内容内容内容内容容内容内容
-                </p>
-                <button class="btn btn-success activityBtn " >了解详情</button>
-            </div>
-            <div class="col-md-11" align="center">
-                <ul class="pagination">
-                    <li class="disabled"><a href="#">&laquo;</a></li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li class="disabled"><a href="#">2</a></li>
-                    <li class="disabled"><a href="#">3</a></li>
-                    <li class="disabled"><a href="#">4</a></li>
-                    <li class="disabled"><a href="#">5</a></li>
-                    <li class="disabled"><a href="#">&raquo;</a></li>
-                </ul>
-            </div>
-
-        </div>
-    </div>
-</div>
-<div class="col-md-3 ownerInfo">
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <div class="col-md-12">
-               <p>
-                   标题标题
-               </p>
-            </div>
-            <a class="col-md-12" style="line-height: 10px;height: 1px;background-color: #eeeeaa;width: 100%; display: block;margin-bottom: 10px"></a>
-            <div class="col-md-12 functionInput">
-                <button class="btn btn-warning col-md-12 ">入口一</button>
-            </div>
-            <div class="col-md-12 functionInput">
-                <button class="btn btn-warning col-md-12 ">入口一</button>
-            </div>
-            <div class="col-md-12 functionInput">
-                <button class="btn btn-warning col-md-12 ">入口一</button>
-            </div>
-        </div>
-
-    </div>
-    <div class="panel panel-warning scheduleDetails col-md-12">
-        <div class="panel-body">
-            <p>
-                日程详情
-            </p>
-            <a class="col-md-12" style="line-height: 10px;height: 1px;background-color: #eeeeaa;width: 100%; display: block;margin-bottom: 10px"></a>
-            <div  align="center">
-                <p>暂无</p>
-            </div>
-            <div class="col-md-12 scheduleDetailsText">
-                <div class="track-list">
-                    <ul>
-                        <li class="first">
-                            <i class="node-icon"></i>
-                            <span class="time">2016-03-10 18:07:15</span>
-                            <span class="txt">感谢您在京东购物，欢迎您再次光临！</span>
-                        </li>
-                        <li>
-                            <i class="node-icon"></i>
-                            <span class="time">2016-03-10 18:07:15</span>
-                            <span class="txt">【京东到家】京东配送员【申国龙】已出发，联系电话【18410106883，感谢您的耐心等待，参加评价还能赢取京豆呦】</span>
-                        </li>
+                <div class="col-md-11" align="center">
+                    <ul class="pagination">
+                        <li class="disabled"><a href="#">&laquo;</a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li class="disabled"><a href="#">2</a></li>
+                        <li class="disabled"><a href="#">3</a></li>
+                        <li class="disabled"><a href="#">4</a></li>
+                        <li class="disabled"><a href="#">5</a></li>
+                        <li class="disabled"><a href="#">&raquo;</a></li>
                     </ul>
                 </div>
+
             </div>
         </div>
+    </div>
+    <div class="col-md-3 ownerInfo">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="col-md-12">
+                    <p>
+                        功能中心
+                    </p>
+                </div>
+                <a class="col-md-12" style="line-height: 10px;height: 1px;background-color: #eeeeaa;width: 100%; display: block;margin-bottom: 10px"></a>
+                <div class="col-md-12 functionInput">
+                    <button class="btn btn-warning col-md-12 " id="memberMgmt">成员管理</button>
+                </div>
+                <div class="col-md-12 functionInput">
+                    <button class="btn btn-warning col-md-12 " id="createGuildActivity">创建公会活动</button>
+                </div>
+                <div class="col-md-12 functionInput">
+                    <button class="btn btn-warning col-md-12 " id="createFleetActivity">创建车队活动</button>
+                </div>
+                <div class="col-md-12 functionInput">
+                    <button class="btn btn-warning col-md-12 " id="createFleet">创建车队</button>
+                </div>
+                <div class="col-md-12 functionInput">
+                    <button class="btn btn-warning col-md-12 " id="findFleet">发现车队</button>
+                </div>
+            </div>
 
+        </div>
+        <div class="panel panel-warning scheduleDetails col-md-12">
+            <div class="panel-body">
+                <p>
+                    公会日程
+                </p>
+                <a class="col-md-12" style="line-height: 10px;height: 1px;background-color: #eeeeaa;width: 100%; display: block;margin-bottom: 10px"></a>
+                <div  align="center">
+                    <p>暂无</p>
+                </div>
+                <div class="col-md-12 scheduleDetailsText">
+                    <div class="track-list">
+                        <ul>
+                            <li class="first">
+                                <i class="node-icon"></i>
+                                <span class="time">2016-03-10 18:07:15</span>
+                                <span class="txt">感谢您在京东购物，欢迎您再次光临！</span>
+                            </li>
+                            <li>
+                                <i class="node-icon"></i>
+                                <span class="time">2016-03-10 18:07:15</span>
+                                <span class="txt">【京东到家】京东配送员【申国龙】已出发，联系电话【18410106883，感谢您的耐心等待，参加评价还能赢取京豆呦】</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-md-1"></div>
+</div>
+<div id="setting" style="z-index: 4;" hidden>
+    <div id="settingPage">
+        <div class="container" style="background: #ffffff;padding-bottom: 20px">
+            <h2>个人信息</h2>
+            <form>
+                <div class="form-group">
+                    <label for="email">角色名</label>
+                    <input type="text" class="form-control" id="email" placeholder="空白页法师">
+                </div>
+                <div class="form-group">
+                    <label for="email">职业</label>
+                    <input type="text" class="form-control" id="email" placeholder="空白页法师">
+                </div>
+                <div class="form-group">
+                    <label for="email">等级</label>
+                    <input type="number" max="120" class="form-control" id="email" placeholder="空白页法师" >
+                </div>
+                <div class="form-group">
+                    <label for="email">装备等级</label>
+                    <input type="number" max="500" class="form-control" id="email" placeholder="空白页法师">
+                </div>
+                <div class="form-group">
+                    <label for="email">种族</label>
+                    <input type="text" class="form-control" id="email" placeholder="空白页法师">
+                </div>
+                <div class="form-group">
+                    <label for="email">常用专精</label>
+                    <select class="form-control" id="sel1">
+                        <option>火焰</option>
+                        <option>冰霜</option>
+                        <option>奥术</option>
+                    </select>
+                </div>
+
+                <button id="settingEnable" type="submit" class="btn btn-primary col-md-12">确认修改</button>
+            </form>
+        </div>
     </div>
 </div>
-<div class="col-md-1"></div>
-
 
 <script rel="script" type="text/javascript" src="../js/extra/Jquery-3.4.1.min.js"></script>
-<script rel="script" type="text/javascript" src="../js/index.js"></script>
 <script rel="script" type="text/javascript" src="../js/share.js"></script>
+<script rel="script" type="text/javascript" src="../js/index.js"></script>
 <script rel="script" type="text/javascript" src="../js/extra/calendar.js"></script>
+<script type="text/javascript" src="../js/extra/bootstrap-datetimepicker.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="../js/extra/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
 <script>
     $('#ca').calendar({
         width: 320,
