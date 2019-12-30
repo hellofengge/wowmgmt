@@ -20,9 +20,31 @@ $(function () {
             window.location.href="toExamine.html"
         }
 
-
     });
 
+    $("#login").click(function () {
+        new Vue({
+            el: '#app',
+            data () {
+            },
+            mounted () {
+                axios
+                    .post('https://localhost:44348/api/values/userinfo')
+                    .then(function (response) {
+                      if (response.data.name =="jack")
+                      {
+                          alert("登陆成功！");
+                      }
+
+                    })
+                    .catch(function (error) { // 请求失败处理
+                       alert("服务器错误")
+                    })
+            }
+        })
+
+
+    });
 
 
 })
