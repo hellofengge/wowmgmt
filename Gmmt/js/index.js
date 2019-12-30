@@ -1,4 +1,8 @@
 $(function () {
+    window.serverAddr = "https://localhost:8888"
+    window.cookieName = "Token";
+    var serverAddr =  window.serverAddr;
+    var cookieName =  window.cookieName;
     var body = $("#body");
     var setting  = $("#setting");
     var activityBtn = $(".activityBtn");
@@ -7,7 +11,7 @@ $(function () {
     var createFleetActivity = $("#createFleetActivity");
     var createFleet = $("#createFleet");
     var findfleet = $("#findFleet");
-
+    console.log(serverAddr);
 
     $("#roleInfoSetting").click(function ()
     {
