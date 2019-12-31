@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>公会注册</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/startPage.css" rel="stylesheet">
+</head>
+<body>
+<div class="body">
+    <div class="container col-md-12" style="background: #ffffff;padding-bottom: 20px">
+        <h2 class="text-center">公会注册</h2>
+        <form class="col-md-12">
+            <div class="form-group">
+                <label for="email">公会名称</label>
+                <input type="text" class="form-control" id="guildName_guildRegister" placeholder="如果名称重复请添加“-游戏服务器名”">
+            </div>
+            <div class="form-group">
+                <label for="email">管理员角色名</label>
+                <input type="text" maxlength="8" class="form-control" id="roleName_guildRegister" placeholder="确保与游戏角色名相同">
+            </div>
+            <div class="form-group">
+                <label for="email">登录密码</label>
+                <input type="password"  maxlength="16" class="form-control" id="pwd-1_guildRegister" placeholder="输入密码">
+            </div>
+            <div class="form-group">
+                <label for="email">确认密码</label>
+                <input type="password" maxlength="16" class="form-control" id="pwd-2_guildRegister" placeholder="确认密码">
+            </div>
+
+        </form>
+        <div class="button col-md-12">
+            <button class="btn btn-info col-md-12 " id="registerConfirm_guildRegister">立即注册</button>
+        </div>
+
+    </div>
+</div>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script rel="script" type="text/javascript" src="../js/extra/vue.min.js"></script>
+<script rel="script" type="text/javascript" src="../js/extra/Jquery-3.4.1.min.js"></script>
+<script rel="script" type="text/javascript" src="../js/startPage.js"></script>
+<script rel="script" type="text/javascript" src="../js/extra/md5.js"></script>
+<script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+</body>
+</html>

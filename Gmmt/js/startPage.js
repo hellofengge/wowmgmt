@@ -6,8 +6,13 @@ $(function ()
     var cookieName =  window.cookieName;
     var registerbBtn = $("#register");
     var registerConfirm = $("#registerConfirm");
+    var registerConfirm_guildRegister = $("#registerConfirm_guildRegister");
     var body = $("#body");
     var loginBbtn = $("#login");
+    var guildName = $("#guildName");
+    var guildTipsSelectOption = $("#guildTipsSelect>p");
+    var guildTipsSelect = $("#guildTipsSelect");
+    var lastTime = 0;
 
     token = $.cookie(cookieName);
 
@@ -93,6 +98,51 @@ $(function ()
     });
 
     /**
+     * 公会注册提交
+     */
+    registerConfirm_guildRegister.click(function () {
+        var guildName = $("#guildName_guildRegister").val();
+        var roleName = $("#roleName_guildRegister").val();
+        var pwd_1 = $("#pwd-1_guildRegister").val();
+        var pwd_2 = $("#pwd-2_guildRegister").val();
+
+        if(pwd_1==""||pwd_2=="")
+        {
+            alert("密码不能为空");
+        }else if(pwd_1!=pwd_2)
+        {
+            alert("密码不一致");
+        }else {
+            pwd_2 =  hex_md5(pwd_2);
+            if($(this).html()!="提交中..."){
+                $(this).text("提交中...");
+                new Vue({
+                    el: '#app',
+                    data () {
+                    },
+                    mounted () {
+                        axios
+                            .post(serverAddr+'/api/guild/add',{"guildName":guildName,"roleName":roleName,"password":pwd_2})
+                            .then(function (response) {
+                                if (response.code==200)
+                                {
+                                    window.location.href="index.html"
+                                }else {
+                                    alert(response.msg);
+                                }
+                                registerConfirm.text("立即注册");
+                            })
+                            .catch(function (error) { // 请求失败处理
+                                registerConfirm.text("立即注册");
+                                alert("服务器错误");
+                            })
+                    }
+                });
+            }
+        }
+    });
+
+    /**
      * 登录
      */
     loginBbtn.click(function () {
@@ -133,10 +183,53 @@ $(function ()
                 }
             });
         }
-
-
-
     });
 
+    guildName.bind("input propertychange",function(event){
+        if(guildName.val().length>1){
+            difference = Date.parse(new Date()) -lastTime;
+            lastTime = Date.parse(new Date());
+            if(difference>5000){
+                var name = guildName.val();
+                new Vue({
+                    el: '#app',
+                    data () {
+                    },
+                    mounted () {
+                        axios
+                            .post(serverAddr+'/api/guild/queryLikeName',{"name":name})
+                            .then(function (response) {
+                                if (response.code==200)
+                                {
+                                    var names = response.names;
+                                    var options = "";
+                                    for (var i =0 ;i<names.length;i++)
+                                    {
+                                        options+=" <p id=\"option"+i+"\">"+names[i]+"</p>\n"
+                                    }
+                                    guildTipsSelect.children().replaceWith(options);
+                                }else {
+                                    alert(response.msg);
+                                }
+                            })
+                            .catch(function (error) { // 请求失败处理
+                                alert("服务器错误");
+                            })
+                    }
+                });
+                guildTipsSelect.show();
+            }
+        }else {
+            guildTipsSelect.hide();
+        }
+    });
+    guildTipsSelectOption.mouseover(function (e) {
+        $("#guildTipsSelect>p").css("background","white")
+        $(this).css("background","gray");
+    });
+    guildTipsSelectOption.click(function () {
+        guildName.val($(this).html());
+        guildTipsSelect.hide();
+    });
 
 })
