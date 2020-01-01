@@ -1,6 +1,6 @@
 $(function ()
 {
-    window.serverAddr = "https://localhost:8888"
+    window.serverAddr = "https://localhost:44386"
     window.cookieName = "Token";
     var serverAddr =  window.serverAddr;
     var cookieName =  window.cookieName;
@@ -130,10 +130,10 @@ $(function ()
                                 }else {
                                     alert(response.msg);
                                 }
-                                registerConfirm.text("立即注册");
+                                registerConfirm_guildRegister.text("立即注册");
                             })
                             .catch(function (error) { // 请求失败处理
-                                registerConfirm.text("立即注册");
+                                registerConfirm_guildRegister.text("立即注册");
                                 alert("服务器错误");
                             })
                     }
@@ -150,9 +150,7 @@ $(function ()
         {
             var rolename = $("#roleName").val();
             var password = $("#password").val();
-            console.log(password);
             password =  hex_md5(password);
-            console.log(password);
             $(this).text("登录中...");
             new Vue({
                 el: '#app',
@@ -160,7 +158,9 @@ $(function ()
                 },
                 mounted () {
                     axios
-                        .post(serverAddr+'/api/member/login',{"rolename":rolename,"password":password})
+                        .post(serverAddr+'/api/member/login',{rolename:rolename,password:password},{
+                        emulateJSON: true
+                    })
                         .then(function (response) {
                             if (response.code==200)
                             {
