@@ -150,38 +150,46 @@ $(function ()
         {
             var rolename = $("#roleName").val();
             var password = $("#password").val();
-            password =  hex_md5(password);
-            $(this).text("登录中...");
-            new Vue({
-                el: '#app',
-                data () {
-                },
-                mounted () {
-                    axios
-                        .post(serverAddr+'/api/member/login',{rolename:rolename,password:password},{
-                        emulateJSON: true
-                    })
-                        .then(function (response) {
-                            if (response.code==200)
-                            {
-                                loginBbtn.text("登录中...");
-                                $.cookie(cookieName,token,{expires:7,path:'/'})
-                                window.location.href=serverAddr+"/index";
-                            }else {
-                                if($.removeCookie(cookieName,{path:'/'})){
-                                    $.cookie(cookieName,"",{expires:7,path:'/'})
-                                }
-                                alert("账号或密码错误");
-                                loginBbtn.text("登录");
-                            }
 
-                        })
-                        .catch(function (error) { // 请求失败处理
-                            loginBbtn.text("登录");
-                            alert("服务器错误");
-                        })
-                }
-            });
+            if(rolename.length<1||password<1){
+                alert("账号密码不能为空");
+
+            }else {
+                password =  hex_md5(password);
+                $(this).text("登录中...");
+                new Vue({
+                    el: '#app',
+                    data () {
+                    },
+                    mounted () {
+                        axios
+                            .post(serverAddr+'/api/member/login',{rolename:rolename,password:password},{
+                                emulateJSON: true
+                            })
+                            .then(function (response) {
+                                if (response.code==200)
+                                {
+                                    loginBbtn.text("登录中...");
+                                    $.cookie(cookieName,token,{expires:7,path:'/'})
+                                    window.location.href=serverAddr+"/index";
+                                }else {
+                                    if($.removeCookie(cookieName,{path:'/'})){
+                                        $.cookie(cookieName,"",{expires:7,path:'/'})
+                                    }
+                                    alert("账号或密码错误");
+                                    loginBbtn.text("登录");
+                                }
+
+                            })
+                            .catch(function (error) { // 请求失败处理
+                                loginBbtn.text("登录");
+                                alert("服务器错误");
+                            })
+                    }
+                });
+            }
+
+
         }
     });
 
