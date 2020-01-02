@@ -26,7 +26,7 @@ $(function ()
                 axios
                     .post(serverAddr+'/api/values/userinfo')
                     .then(function (response) {
-                        if (response.code==200)
+                        if (response.data.code===200)
                         {
                             $(this).text("登录中...");
                             $.cookie(cookieName,token,{expires:7,path:'/'})
@@ -79,11 +79,11 @@ $(function ()
                         axios
                             .post(serverAddr+'/api/member/add',{"guildName":guildName,"roleName":roleName,"password":pwd_2})
                             .then(function (response) {
-                                if (response.code==200)
+                                if (response.data.code===200)
                                 {
                                     window.location.href="toExamine.html"
                                 }else {
-                                    alert(response.msg);
+                                    alert(response.data.msg);
                                 }
                                 registerConfirm.text("提交管理员审核");
                             })
@@ -124,11 +124,11 @@ $(function ()
                         axios
                             .post(serverAddr+'/api/guild/add',{"guildName":guildName,"roleName":roleName,"password":pwd_2})
                             .then(function (response) {
-                                if (response.code==200)
+                                if (response.data.code=="200")
                                 {
                                     window.location.href="index.html"
                                 }else {
-                                    alert(response.msg);
+                                    alert(response.data.msg);
                                 }
                                 registerConfirm_guildRegister.text("立即注册");
                             })
@@ -166,8 +166,9 @@ $(function ()
                             .post(serverAddr+'/api/member/login',{rolename:rolename,password:password},{
                                 emulateJSON: true
                             })
-                            .then(function (response) {
-                                if (response.code==200)
+                            .then(function (response)
+                            {
+                                if (response.data.code=="200")
                                 {
                                     loginBbtn.text("登录中...");
                                     $.cookie(cookieName,token,{expires:7,path:'/'})
@@ -176,7 +177,7 @@ $(function ()
                                     if($.removeCookie(cookieName,{path:'/'})){
                                         $.cookie(cookieName,"",{expires:7,path:'/'})
                                     }
-                                    alert("账号或密码错误");
+                                    alert(response.data.msg);
                                     loginBbtn.text("登录");
                                 }
 
@@ -207,9 +208,9 @@ $(function ()
                         axios
                             .post(serverAddr+'/api/guild/queryLikeName',{"name":name})
                             .then(function (response) {
-                                if (response.code==200)
+                                if (response.data.code==200)
                                 {
-                                    var names = response.names;
+                                    var names = response.data.names;
                                     var options = "";
                                     for (var i =0 ;i<names.length;i++)
                                     {
@@ -217,7 +218,7 @@ $(function ()
                                     }
                                     guildTipsSelect.children().replaceWith(options);
                                 }else {
-                                    alert(response.msg);
+                                    alert(response.data.msg);
                                 }
                             })
                             .catch(function (error) { // 请求失败处理
