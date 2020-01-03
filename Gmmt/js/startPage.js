@@ -77,7 +77,7 @@ $(function ()
                     },
                     mounted () {
                         axios
-                            .post(serverAddr+'/api/member/add',{"guildName":guildName,"roleName":roleName,"password":pwd_2})
+                            .post(serverAddr+'/api/member/add',{"guildName":guildName,"no":roleName,"password":pwd_2})
                             .then(function (response) {
                                 if (response.data.code===200)
                                 {
@@ -122,7 +122,7 @@ $(function ()
                     },
                     mounted () {
                         axios
-                            .post(serverAddr+'/api/guild/add',{"guildName":guildName,"roleName":roleName,"password":pwd_2})
+                            .post(serverAddr+'/api/guild/register',{"guildName":guildName,"No":roleName,"password":pwd_2})
                             .then(function (response) {
                                 if (response.data.code=="200")
                                 {
@@ -163,7 +163,7 @@ $(function ()
                     },
                     mounted () {
                         axios
-                            .post(serverAddr+'/api/member/login',{rolename:rolename,password:password},{
+                            .post(serverAddr+'/api/member/login',{no:rolename,password:password},{
                                 emulateJSON: true
                             })
                             .then(function (response)
