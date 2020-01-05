@@ -12,6 +12,7 @@ $(function ()
     var guildName = $("#guildName");
     var guildTipsSelectOption = $("#guildTipsSelect>p");
     var guildTipsSelect = $("#guildTipsSelect");
+    var guildRegister = $("#guildRegister");
     var lastTime = 0;
 
     token = $.cookie(cookieName);
@@ -126,6 +127,7 @@ $(function ()
                             .then(function (response) {
                                 if (response.data.code=="200")
                                 {
+                                    $.cookie(cookieName,response.data.data.Token);
                                     window.location.href="index.html"
                                 }else {
                                     alert(response.data.msg);
@@ -192,6 +194,13 @@ $(function ()
 
 
         }
+    });
+
+    /**
+     * 工会注册
+     */
+    guildRegister.click(function () {
+        window.location.href = "registGuild.html"
     });
 
     guildName.bind("input propertychange",function(event){
